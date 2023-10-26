@@ -1,0 +1,12 @@
+npm init (create a json file)
+
+npm install express cors mysql (cors help in connection between react and backend)
+
+npm install nodemon (automatically starts the server when we save project)
+go to json file in under scripts do "start": "nodemon index.js"
+
+npm install sequelize sequelize-cli(database base connection)
+npx sequelize init(to initialize)
+
+
+downloaded api tester or a tester to check my post requests = insomnia api tester
