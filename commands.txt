@@ -9,4 +9,11 @@ npm install sequelize sequelize-cli(database base connection)
 npx sequelize init(to initialize)
 
 
-downloaded api tester or a tester to check my post requests = insomnia api tester
+npm install axios
+npm install cors
+npm install react-router-dom
+npm install formik
+
+
+
+npm install bcrypt(passwrd and stuff)
