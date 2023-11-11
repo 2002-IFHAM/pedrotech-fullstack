@@ -17,3 +17,6 @@ npm install formik
 
 
 npm install bcrypt(passwrd and stuff)
+
+
+npm install jsonwebtoken

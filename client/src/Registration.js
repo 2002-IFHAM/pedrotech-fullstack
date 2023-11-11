@@ -2,12 +2,14 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Registration() {
   const initialValues = {
     username: "",
     password: "",
   };
+  let navigate = useNavigate();
 
   const validationSchema = Yup.object().shape({
     username: Yup.string().min(3).max(15).required(),
@@ -17,6 +19,7 @@ function Registration() {
   const onSubmit = (data) => {
     axios.post("http://localhost:8082/auth", data).then(() => {
       console.log(data);
+      navigate("/");
     });
   };
 

@@ -19,14 +19,29 @@ function Postp() {
 
   const addComment = () => {
     axios
-      .post("http://localhost:8082/comments", {
-        commentBody: newComment,
-        postId: id,
-      })
+      .post(
+        "http://localhost:8082/comments",
+        {
+          commentBody: newComment,
+          postId: id,
+        },
+        {
+          headers: {
+            accessToken: localStorage.getItem("accessToken"),
+          },
+        }
+      )
       .then((response) => {
-        const commentToAdd = { commentBody: newComment };
-        setComments([...comments, commentToAdd]);
-        setNewComment("");
+        if (response.data.error) {
+          alert(response.data.error);
+        } else {
+          const commentToAdd = {
+            commentBody: newComment,
+            username: response.data.username,
+          };
+          setComments([...comments, commentToAdd]);
+          setNewComment("");
+        }
       });
   };
 
@@ -57,6 +72,7 @@ function Postp() {
             return (
               <div key={key} className="comment">
                 {comment.commentBody}
+                <label>Username:{comment.username}</label>
               </div>
             );
           })}
