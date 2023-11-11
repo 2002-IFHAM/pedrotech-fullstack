@@ -5,7 +5,7 @@ import CreatePost from "./CreatePost";
 import Postp from "./postp";
 import Registration from "./Registration";
 import Login from "./Login";
-import { AuthContext } from "./helpers/AuthContext";
+import { AuthContext } from "./AuthContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
 function App() {
